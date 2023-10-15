@@ -1,8 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Navbar } from "@/components/Navbar";
+
+const diatype = localFont({ src: "./fonts/ABCDiatypeRegular.woff2", display: "swap" });
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -12,7 +14,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={diatype.className}>
+				<Navbar />
+				<main>{children}</main>
+			</body>
 		</html>
 	);
 }
