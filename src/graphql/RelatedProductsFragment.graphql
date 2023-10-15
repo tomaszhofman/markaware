@@ -1,0 +1,9 @@
+fragment RelatedProducts on Product {
+	relatedProducts {
+		slug
+		color {
+			name
+			hex
+		}
+	}
+}

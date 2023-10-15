@@ -1,0 +1,4 @@
+fragment Color on ProductColorVariant {
+	hex
+	name
+}

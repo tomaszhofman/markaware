@@ -1,0 +1,28 @@
+query ProductGetListItem($slug: String!) {
+	product(where: { slug: $slug }) {
+		id
+		fabric
+		description
+		color {
+			hex
+			name
+		}
+		name
+		price
+		...RelatedProducts
+		variants {
+			... on Variant {
+				id
+				size {
+					name
+					label
+				}
+				color {
+					...Color
+				}
+				available
+				quantityAvailable
+			}
+		}
+	}
+}
